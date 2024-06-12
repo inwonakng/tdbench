@@ -1,0 +1,50 @@
+defaults:
+  - data/datasets:
+      - adult
+      - amazon_employee_access
+      - bank_marketing
+      - credit
+      - credit_default
+      - diabetes
+      - electricity
+      - elevators
+      - higgs
+      - home_equity_credit
+      - house
+      - jannis
+      - law_school_admissions
+      - magic_telescope
+      - medical_appointments
+      - mini_boo_ne
+      - numer_ai
+      - nursery
+      - phishing_websites
+      - pol
+      - road_safety
+      - tencent_ctr_small
+      - two_d_planes
+  - data/mode: default
+  - encoder/models:
+      - mlp
+  - encoder/train: default
+  - encoder/multihead: default
+  - distill/common: default
+  - distill/methods:
+      - original
+      - random_sample
+      - encoded
+      - decoded
+      - agglo
+      - kip
+      - kmeans
+      - gm
+  - classifier/models:
+      - xgb
+      - ft_transformer
+      - resnet
+      - mlp
+      - logistic_regression
+      - gaussian_nb
+      - knn
+  - classifier/train: default
+  - _self_

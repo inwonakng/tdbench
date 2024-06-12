@@ -1,0 +1,8 @@
+defaults:
+  - models:
+    - xgb
+    - logistic_regression
+    - mlp
+    - knn
+    - gaussian_nb
+  - train: default

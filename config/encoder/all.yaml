@@ -1,0 +1,7 @@
+defaults:
+  - models:
+    - gnn
+    - mlp
+    - tf
+  - train: default
+  - multihead: default
