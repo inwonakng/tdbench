@@ -1,4 +1,4 @@
-# TDBench: Tabular Data Distillation Benchmark
+# TDBench: Benchmarking Tabular Dataset Distillation
 
 It contains all the code and resources necessary to recreate the experiments described in the paper titled **TDBench: Tabular Data Distillation Benchmark**.
 
