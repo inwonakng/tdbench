@@ -1,0 +1,44 @@
+ResNet:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: ResNet
+  default_params:
+    device: cpu
+    n_blocks: 4
+    d_block: 128
+    d_hidden_multiplier: 1.25
+    dropout1: 0.2
+    dropout2: 0.2
+    opt_name: Adam
+    opt_lr: 0.0001
+    opt_wd: 0.00001
+    early_stopping: True
+    max_epochs: 1000000
+    patience: 16
+  tune_params:
+    n_blocks:
+      _target_: ray.tune.choice
+      categories: [2, 3, 4, 5]
+    d_block:
+      _target_: ray.tune.choice
+      categories: [16, 32, 64, 128, 256]
+    d_hidden_multiplier:
+      _target_: ray.tune.choice
+      categories: [1, 1.25, 1.5, 2]
+    dropout1:
+      _target_: ray.tune.choice
+      categories: [0.3, 0.2, 0.1, 0.01, 0]
+    dropout2:
+      _target_: ray.tune.choice
+      categories: [0.3, 0.2, 0.1, 0.01, 0]
+    opt_name:
+      _target_: ray.tune.choice
+      categories: [Adam]
+    opt_lr:
+      _target_: ray.tune.choice
+      categories: [0.1, 0.01, 0.001]
+    opt_wd:
+      _target_: ray.tune.choice
+      categories: [0.01, 0.001, 0.0001, 0]
+
+  use_sample_weight: false
+  use_n_jobs: false

@@ -1,0 +1,9 @@
+encoded:
+  _target_: tabdd.config.DistillConfig
+  distill_method_name: encoded
+  is_random: false
+  is_cluster: false
+  is_baseline: true
+  can_use_encoder: true
+  can_distill: false
+  args: {}

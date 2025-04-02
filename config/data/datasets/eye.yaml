@@ -1,0 +1,9 @@
+eye:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: EyeMovements
+  download_url: https://www.openml.org/data/download/53927/eye_movements.arff
+  label: label
+  n_classes: 3
+  source_type: openml
+
+

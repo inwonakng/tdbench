@@ -1,0 +1,7 @@
+home_equity_credit:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: HomeEquityCredit
+  download_url: https://api.openml.org/data/download/22111909/dataset
+  label: RiskPerformance
+  n_classes: 2
+  source_type: openml

@@ -1,0 +1,49 @@
+gnn:
+  _target_: tabdd.config.EncoderTuneConfig
+  encoder_name: GNNAutoEncoder
+  cls:
+    _target_: hydra.utils.get_class
+    path: tabdd.models.encoder.GNNAutoEncoder
+  tune_params:
+    graph_layer:
+      _target_: ray.tune.choice
+      categories: [SAGE, GCN, GAT]
+    graph_aggr:
+      _target_: ray.tune.choice
+      categories: [mean, softmax]
+    n_graph_layers:
+      _target_: ray.tune.choice
+      categories: [2, 3, 4, 5, 10, 15]
+    edge_direction:
+      _target_: ray.tune.choice
+      categories: [bidirectional, multipass_1, multipass_2]
+    drop_edge_p:
+      _target_: ray.tune.choice
+      categories: [0, 0.2, 0.4]
+    decoder_hidden_dims:
+      _target_: ray.tune.choice
+      categories:
+        - [100]
+        - [100, 100]
+        - [100, 100, 100]
+        - [100, 100, 100, 100]
+        - [200]
+        - [200, 200]
+        - [200, 200, 200]
+        - [200, 200, 200, 200]
+    opt_name:
+      _target_: ray.tune.choice
+      categories: [Adam]
+    opt_lr:
+      _target_: ray.tune.choice
+      categories: [0.1, 0.01, 0.001]
+    opt_wd:
+      _target_: ray.tune.choice
+      categories: [0, 0.001, 0.0001]
+    sch_names:
+      _target_: ray.tune.choice
+      categories:
+        - []
+        - [ReduceLROnPlateau]
+        - [CosineAnnealingLR]
+

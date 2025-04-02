@@ -1,0 +1,7 @@
+house:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: House
+  download_url: https://www.openml.org/data/download/53355/house_16H.arff
+  label: binaryClass
+  n_classes: 2
+  source_type: openml

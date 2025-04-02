@@ -1,0 +1,22 @@
+mtt:
+  _target_: tabdd.config.DistillConfig
+  distill_method_name: mtt
+  is_random: true
+  is_cluster: false
+  is_baseline: false
+  can_use_encoder: true
+  can_distill: true
+  args:
+    n_epochs: 50
+    expert_epochs: 3
+    syn_steps: 20
+    max_start_epoch: 25
+    mlp_dim: 1024
+    n_iter: 2000
+    n_experts: 10
+    lr_teacher: 0.01
+    lr_data: 1000
+    lr_lr: 1e-05
+    mom_lr: 0.5
+    mom_data: 0.5
+    n_hidden_layers: 1

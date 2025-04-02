@@ -1,0 +1,7 @@
+numer_ai:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: NumerAI
+  download_url: https://www.openml.org/data/download/2160285/phpg2t68G
+  label: attribute_21
+  n_classes: 2
+  source_type: openml

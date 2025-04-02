@@ -1,0 +1,7 @@
+road_safety:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: RoadSafety
+  download_url: https://api.openml.org/data/download/22103286/dataset
+  label: Sex_of_Driver
+  n_classes: 2
+  source_type: openml

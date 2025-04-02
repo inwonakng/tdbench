@@ -1,0 +1,7 @@
+credit:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: Credit
+  download_url: https://api.openml.org/data/download/22111913/dataset
+  label: SeriousDlqin2yrs
+  n_classes: 2
+  source_type: openml

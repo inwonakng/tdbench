@@ -1,0 +1,36 @@
+XGBClassifier:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: XGBClassifier
+  default_params:
+    objective: reg:logistic
+  tune_params:
+    max_depth:
+      kind: int
+      lower: 3
+      upper: 21
+    n_estimators:
+      kind: int
+      lower: 10
+      upper: 1001
+    learning_rate:
+      kind: float_log
+      lower: 0.01
+      upper: 1
+    reg_lambda:
+      kind: float_log
+      lower: 0.001
+      upper: 10
+    colsample_bytree:
+      kind: float
+      lower: 0.5
+      upper: 1
+    subsample:
+      kind: float
+      lower: 0.5
+      upper: 1
+    min_split_loss:
+      kind: float_log
+      lower: 0.0000000001
+      upper: 0.1
+  use_sample_weight: true
+  use_n_jobs: true

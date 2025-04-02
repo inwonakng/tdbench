@@ -1,0 +1,18 @@
+_target_: tabdd.config.EncoderTrainConfig 
+num_epochs: 50
+num_samples: 500
+latent_dim: 16
+target_metric: combined_score
+classifier_target_metric: weighted_f1_score
+classifier_criterion: cross_entropy
+autoencoder_target_metric: recon_accuracy_score
+autoencoder_criterion: balanced_tabular_recon
+combined_metric_balance: 0.5
+max_concurrent_trials: 18
+criterion: balanced_tabular_recon
+gpu_per_worker: 0.333
+cpu_per_worker: 2
+checkpoint_dir: best_checkpoints
+train_target:
+  - base
+  - multihead

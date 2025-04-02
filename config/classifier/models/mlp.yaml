@@ -1,0 +1,37 @@
+MLPClassifier:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: MLPClassifier
+  default_params: {}
+  tune_params:
+    hidden_layer_sizes: 
+      _target_: ray.tune.choice
+      categories:
+      - [100]
+      - [100, 100]
+      - [100, 100, 100]
+    activation: 
+      _target_: ray.tune.choice
+      categories: [tanh, relu, logistic, identity]
+    alpha: 
+      _target_: ray.tune.loguniform
+      lower: 0.0001
+      upper: 0.01
+    learning_rate:
+      _target_: ray.tune.choice
+      categories: [constant, invscaling, adaptive]
+    max_iter: 
+      _target_: ray.tune.choice
+      categories: [100, 200, 500, 1000]
+    tol:
+      _target_: ray.tune.loguniform
+      lower: 0.00001
+      upper: 0.001
+    momentum:
+      _target_: ray.tune.loguniform
+      lower: 0.7
+      upper: 0.9
+    early_stopping:
+      _target_: ray.tune.choice
+      categories: [true, false]
+  use_sample_weight: false
+  use_n_jobs: false

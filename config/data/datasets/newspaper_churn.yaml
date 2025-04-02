@@ -1,0 +1,7 @@
+newspaper_churn:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: NewspaperChurn
+  download_url: https://api.openml.org/data/download/22106811/dataset
+  label: Subscriber
+  n_classes: 2
+  source_type: openml

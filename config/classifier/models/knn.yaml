@@ -1,0 +1,22 @@
+KNeighborsClassifier:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: KNeighborsClassifier
+  default_params: {}
+  tune_params:
+    n_neighbors: 
+      _target_: ray.tune.choice
+      categories: [5, 10, 20]
+    weights: 
+      _target_: ray.tune.choice
+      categories: [uniform, distance]
+    algorithm: 
+      _target_: ray.tune.choice
+      categories: [auto, ball_tree, kd_tree, brute]
+    leaf_size: 
+      _target_: ray.tune.choice
+      categories: [10,20,30,50,100,200]
+    p: 
+      _target_: ray.tune.choice
+      categories: [1,2,3]
+  use_sample_weight: false
+  use_n_jobs: true

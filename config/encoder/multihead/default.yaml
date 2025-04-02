@@ -1,0 +1,29 @@
+_target_: tabdd.config.MultiEncoderTuneConfig
+tune_params:
+  classifier_hidden_dims:
+    _target_: ray.tune.choice
+    categories: 
+      - [100]
+      - [100, 100]
+      - [100, 100, 100]
+  classifier_dropout_p:
+    _target_: ray.tune.choice
+    categories: [0, 0.2, 0.4]
+  combined_loss_balance:
+    _target_: ray.tune.choice
+    categories: [0.3, 0.5, 0.7]
+  opt_name:
+    _target_: ray.tune.choice
+    categories: [Adam]
+  opt_lr:
+    _target_: ray.tune.choice
+    categories: [0.1, 0.01, 0.001]
+  opt_wd:
+    _target_: ray.tune.choice
+    categories: [0, 0.001, 0.0001]
+  sch_name:
+    _target_: ray.tune.choice
+    categories:
+      - []
+      - [ReduceLROnPlateau]
+      - [CosineAnnealingLR]

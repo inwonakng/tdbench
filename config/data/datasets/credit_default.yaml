@@ -1,0 +1,7 @@
+credit_default:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: CreditDefault
+  download_url: https://api.openml.org/data/download/22111906/dataset
+  label: y
+  n_classes: 2
+  source_type: openml

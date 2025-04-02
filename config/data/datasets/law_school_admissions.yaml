@@ -1,0 +1,7 @@
+law_school_admissions:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: LawSchoolAdmissions
+  download_url: https://api.openml.org/data/download/22102798/file862706e533fa5.arff
+  label: ugpagt3
+  n_classes: 2
+  source_type: openml

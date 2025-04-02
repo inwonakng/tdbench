@@ -1,0 +1,9 @@
+agglo:
+  _target_: tabdd.config.DistillConfig
+  distill_method_name: agglo
+  is_random: false
+  is_cluster: true
+  is_baseline: false
+  can_use_encoder: true
+  can_distill: true
+  args: {}

@@ -1,0 +1,7 @@
+TabPFN:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: TabPFN
+  default_params: {}
+  tune_params: {}
+  use_sample_weight: false
+  use_n_jobs: true

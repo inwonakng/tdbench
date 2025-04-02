@@ -1,0 +1,7 @@
+internet_usage:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: InternetUsage
+  download_url: https://api.openml.org/data/download/22102968/file3aa4316417fe.arff
+  label: who_pays_for_access_work
+  n_classes: 2
+  source_type: openml

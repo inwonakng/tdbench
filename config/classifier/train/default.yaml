@@ -1,0 +1,10 @@
+_target_: tabdd.config.ClassifierTrainConfig
+num_samples: 100
+metric_name: balanced_accuracy
+optimizer_name: hyperopt
+n_folds: 0
+results_dir: tune_classifier_results
+tune_hyperopt: false
+cpu_per_worker: 2
+max_concurrent_trials: 40
+rerun_tune: false

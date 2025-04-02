@@ -1,0 +1,54 @@
+mlp:
+  _target_: tabdd.config.EncoderTuneConfig
+  encoder_name: MLPAutoEncoder
+  cls:
+    _target_: hydra.utils.get_class
+    path: tabdd.models.encoder.MLPAutoEncoder
+  tune_params:
+    encoder_dims:
+      _target_: ray.tune.choice
+      categories:
+        - [100]
+        - [100, 100]
+        - [100, 100, 100]
+        - [100, 100, 100, 100]
+        - [200]
+        - [200, 200]
+        - [200, 200, 200]
+        - [200, 200, 200, 200]
+    decoder_dims:
+      _target_: ray.tune.choice
+      categories:
+        - [100]
+        - [100, 100]
+        - [100, 100, 100]
+        - [100, 100, 100, 100]
+        - [200]
+        - [200, 200]
+        - [200, 200, 200]
+        - [200, 200, 200, 200]
+    embed_dim:
+      _target_: ray.tune.choice
+      categories: [10, 20, 50, 100, 200]
+    dropout_p:
+      _target_: ray.tune.choice
+      categories: [0, 0.2, 0.4]
+    use_embedding:
+      _target_: ray.tune.choice
+      categories: [true, false]
+    opt_name:
+      _target_: ray.tune.choice
+      categories: [Adam]
+    opt_lr:
+      _target_: ray.tune.choice
+      categories: [0.1, 0.01, 0.001]
+    opt_wd:
+      _target_: ray.tune.choice
+      categories: [0, 0.001, 0.0001]
+    sch_names:
+      _target_: ray.tune.choice
+      categories:
+        - []
+        - [ReduceLROnPlateau]
+        - [CosineAnnealingLR]
+

@@ -1,0 +1,8 @@
+defaults:
+  - data: all
+  - classifier: all
+  - distill: all
+  - encoder: all
+  - _self_
+refresh_results: false
+rerun_tune: false

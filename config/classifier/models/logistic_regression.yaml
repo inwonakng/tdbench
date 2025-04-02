@@ -1,0 +1,21 @@
+LogisticRegression:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: LogisticRegression
+  default_params: 
+    multi_class: multinomial
+  tune_params:
+    tol: 
+      kind: float_log
+      lower: 0.00005
+      upper: 0.01
+    solver: 
+      kind: categorical
+      choices: [newton-cg, lbfgs, sag, saga]
+    penalty: 
+      kind: categorical
+      choices: [l2, null]
+    max_iter: 
+      kind: categorical
+      choices: [500, 1000, 2000]
+  use_sample_weight: true
+  use_n_jobs: true

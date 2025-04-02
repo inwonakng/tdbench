@@ -1,0 +1,6 @@
+defaults:
+  - data/datasets: phishing_websites
+  - data/mode: default 
+  - encoder/train: a100s
+  - encoder/models: tf
+  - _self_

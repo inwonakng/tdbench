@@ -1,0 +1,13 @@
+forgetting:
+  _target_: tabdd.config.DistillConfig
+  distill_method_name: forgetting
+  is_random: true
+  is_cluster: false
+  is_baseline: false
+  can_use_encoder: true
+  can_distill: true
+  args:
+    n_epochs: 100
+    mlp_dim: 1024
+    lr: 0.01
+    n_hidden_layers: 2

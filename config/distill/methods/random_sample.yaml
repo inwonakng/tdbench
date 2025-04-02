@@ -1,0 +1,9 @@
+random_sample:
+  _target_: tabdd.config.DistillConfig
+  distill_method_name: random_sample
+  is_random: true
+  is_cluster: false
+  is_baseline: false
+  can_use_encoder: false
+  can_distill: true
+  args: {}

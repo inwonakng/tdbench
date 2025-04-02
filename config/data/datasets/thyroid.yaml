@@ -1,0 +1,7 @@
+thyroid:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: ThyroidAnn
+  download_url: https://www.openml.org/data/download/4535758/phposACMs
+  label: Class
+  n_classes: 3
+  source_type: openml

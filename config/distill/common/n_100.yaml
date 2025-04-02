@@ -1,0 +1,3 @@
+random_iters: 1
+distill_sizes: 
+  - 100

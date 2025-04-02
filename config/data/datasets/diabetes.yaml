@@ -1,0 +1,7 @@
+diabetes:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: Diabetes
+  download_url: https://api.openml.org/data/download/22111908/dataset
+  label: readmitted
+  n_classes: 2
+  source_type: openml

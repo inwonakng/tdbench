@@ -1,0 +1,7 @@
+higgs:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: Higgs
+  download_url: https://www.openml.org/data/download/2063675/phpZLgL9q
+  label: class
+  n_classes: 2
+  source_type: openml

@@ -1,0 +1,8 @@
+defaults:
+  - data/datasets:
+    - adult
+  - data/mode: default 
+  - encoder/models:
+    - mlp
+  - encoder: multihead
+  - _self_

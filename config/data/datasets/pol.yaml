@@ -1,0 +1,7 @@
+pol:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: Pol
+  download_url: https://www.openml.org/data/download/53256/pol.arff
+  label: binaryClass
+  n_classes: 2
+  source_type: openml

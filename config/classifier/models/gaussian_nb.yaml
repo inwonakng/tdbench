@@ -1,0 +1,11 @@
+GaussianNB:
+  _target_: tabdd.config.ClassifierTuneConfig
+  classifier_name: GaussianNB
+  default_params: {}
+  tune_params:
+    var_smoothing:
+      _target_: ray.tune.loguniform
+      lower: 0.000000001
+      upper: 1
+  use_sample_weight: true
+  use_n_jobs: false

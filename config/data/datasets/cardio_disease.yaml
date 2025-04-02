@@ -1,0 +1,7 @@
+cardio_disease:
+  _target_: tabdd.config.DatasetConfig
+  dataset_name: CardioDisease
+  download_url: https://api.openml.org/data/download/22116515/dataset
+  label: cardio
+  n_classes: 2
+  source_type: openml

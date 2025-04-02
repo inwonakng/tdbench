@@ -1,0 +1,13 @@
+defaults:
+  - methods: 
+    - agglo
+    - decoded
+    - original
+    - decoded
+    - encoded
+    - random_sample
+    - kmeans
+    - agglo
+    - kip
+    - gm
+  - common: default
