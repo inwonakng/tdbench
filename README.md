@@ -1,6 +1,6 @@
-# tab-data-distill
+# TDBench: Tabular Data Distillation Benchmark
 
-Repository for the extern project on Tabular Data Distillation
+Code for "On Learning Representations for Tabular Data Distillation"
 
 ## Installation
 
@@ -62,79 +62,6 @@ The configuration is managed through hydra.
 
 All configuration is managed by hydra, and train/optimizing autoencoders and downstream classifiers can be done with the `scripts/tune.sh` script.
 This script can be ran from anywhere, and assumes that conda base environment is activated.
-
-### Arguments and default values
-
-- `--op`
-  - Operation to perform.
-  - Options: ["classifier", "encoder"].
-  - Defaults to "classifier".
-- `--datasets`
-  - Datasts to use.
-  - Options: Any dataset correctly configured under `config/data/datasets`.
-  - Defaults to all available datasets.
-- `--data_mode`
-  - Mode to parse the data in.
-  - Options ["onehot", "mixed", "onehot-mixed", "mixed-onehot"].
-  - Defaults to "onehot"
-- `--classifiers`
-  - Classifiers to train. Only relevant when `operation=="classifier"`.
-  - Options: Any classifier configured under `config/classifier/models`.
-    Defaults to all classifiers.
-- `--distill_methods`
-  - Distillation methods to use. Only relevant when operation=="classifier".
-  - Options: Any distillation method configured under `config/classifier/distill_methods`.
-  - Defaults to all distillation methods.
-- `--encoders`
-  - Encoders to train.
-  - Options: Any encoder configured under `config/encoder/models`.
-  - Defaults to all encoders.
-- `--encoder_train`
-  - Encoder training setting.
-  - Options: Any setting configured under `config/encoder/train`.
-  - Defaults to "npl"
-- `--encoder_train_target`
-  - Encoder training target.
-  - Options: ["[base]", "[multihead]", "[base,multihead]"].
-  - Defaults to ["base"].
-- `--latent_dim`
-  - Latent dimension of the encoder.
-  - Defaults to 16.
-- `--checkpoint_dir`
-  - Directory to store autoencoder checkpoints.
-  - Defaults to "best_checkpoints".
-- `--results_dir`
-  - Directory to store results.
-  - Defaults to "$DATA_REPO_DIR/tune_classifier_results".
-- `--tune_hyperopt`
-  - Flag to enable hyperopt optimization for downstream classifiers.
-  - If included, will set to "true"
-
-### Training autoencoders
-
-```bash
-bash scripts/tune.sh \
-  --op=encoder \
-  --datasets=[adult] \
-  --encoders=[tf] \
-  --encoder_train=npl \
-  --encoder_train_target=[multihead] \
-  --latent_dim=16 \
-  --checkpoint_dir=best_checkpoints;
-```
-
-### Training classifiers
-
-```bash
-bash scripts/tune.sh \
-  --op=classifier \
-  --datasets=[adult] \
-  --encoders=none \
-  --classifiers=[xgb] \
-  --distill_methods=[kmeans] \
-  --results_dir=reports \
-  --tune_hyperopt;
-```
 
 ### Using Hydra
 
